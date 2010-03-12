@@ -1,0 +1,197 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
+    Methods
+
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Methods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div id="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+    <a href="classes/SiteController.html#M000090">about (SiteController)</a><br />
+    <a href="classes/Ship.html#M000113">accuracy (Ship)</a><br />
+    <a href="classes/ApplicationHelper.html#M000152">admin? (ApplicationHelper)</a><br />
+    <a href="classes/Ship.html#M000112">attack (Ship)</a><br />
+    <a href="classes/Battle.html#M000092">battle (Battle)</a><br />
+    <a href="classes/User.html#M000043">build_inbox (User)</a><br />
+    <a href="classes/MerchantItem.html#M000084">buy_value (MerchantItem)</a><br />
+    <a href="classes/Character.html#M000008">cannonmastery_check? (Character)</a><br />
+    <a href="classes/Ship.html#M000116">cargo (Ship)</a><br />
+    <a href="classes/ShipsController.html#M000149">cargo (ShipsController)</a><br />
+    <a href="classes/ApplicationController.html#M000109">check_authorization (ApplicationController)</a><br />
+    <a href="classes/ApplicationHelper.html#M000168">checklist (ApplicationHelper)</a><br />
+    <a href="classes/User.html#M000048">clear_password! (User)</a><br />
+    <a href="classes/ApplicationHelper.html#M000155">convert_seconds_to_time (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000171">count_all_mail (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000170">count_unread (ApplicationHelper)</a><br />
+    <a href="classes/ItemsController.html#M000039">create (ItemsController)</a><br />
+    <a href="classes/CharactersController.html#M000098">create (CharactersController)</a><br />
+    <a href="classes/ShipAttributesController.html#M000080">create (ShipAttributesController)</a><br />
+    <a href="classes/NewsPostsController.html#M000105">create (NewsPostsController)</a><br />
+    <a href="classes/TimeTasksController.html#M000017">create (TimeTasksController)</a><br />
+    <a href="classes/SentController.html#M000124">create (SentController)</a><br />
+    <a href="classes/ShipsController.html#M000142">create (ShipsController)</a><br />
+    <a href="classes/MerchantsController.html#M000024">create (MerchantsController)</a><br />
+    <a href="classes/RoutesController.html#M000135">create (RoutesController)</a><br />
+    <a href="classes/ShipItemsController.html#M000057">create (ShipItemsController)</a><br />
+    <a href="classes/PortsController.html#M000070">create (PortsController)</a><br />
+    <a href="classes/BattlesController.html#M000063">create (BattlesController)</a><br />
+    <a href="classes/Ship.html#M000119">create_std_items (Ship)</a><br />
+    <a href="classes/ApplicationHelper.html#M000161">current_cargo (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000159">current_character (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000160">current_ship (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000162">current_ship_attributes (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000163">current_ship_items (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000164">current_ship_items_item (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000166">current_ship_items_item_equipped (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000165">current_ship_items_item_unequipped (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000158">current_user (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000153">currently_moving (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000154">currently_moving_to (ApplicationHelper)</a><br />
+    <a href="classes/ShipItemsController.html#M000056">delete (ShipItemsController)</a><br />
+    <a href="classes/SiteController.html#M000091">denied (SiteController)</a><br />
+    <a href="classes/MessagesController.html#M000127">destroy (MessagesController)</a><br />
+    <a href="classes/BattlesController.html#M000065">destroy (BattlesController)</a><br />
+    <a href="classes/ShipsController.html#M000144">destroy (ShipsController)</a><br />
+    <a href="classes/ItemsController.html#M000041">destroy (ItemsController)</a><br />
+    <a href="classes/ShipAttributesController.html#M000082">destroy (ShipAttributesController)</a><br />
+    <a href="classes/MerchantsController.html#M000026">destroy (MerchantsController)</a><br />
+    <a href="classes/CharactersController.html#M000100">destroy (CharactersController)</a><br />
+    <a href="classes/TimeTasksController.html#M000019">destroy (TimeTasksController)</a><br />
+    <a href="classes/PortsController.html#M000072">destroy (PortsController)</a><br />
+    <a href="classes/NewsPostsController.html#M000107">destroy (NewsPostsController)</a><br />
+    <a href="classes/RoutesController.html#M000137">destroy (RoutesController)</a><br />
+    <a href="classes/NewsPostsController.html#M000104">edit (NewsPostsController)</a><br />
+    <a href="classes/CharactersController.html#M000097">edit (CharactersController)</a><br />
+    <a href="classes/ShipAttributesController.html#M000079">edit (ShipAttributesController)</a><br />
+    <a href="classes/MerchantsController.html#M000023">edit (MerchantsController)</a><br />
+    <a href="classes/ItemsController.html#M000038">edit (ItemsController)</a><br />
+    <a href="classes/RoutesController.html#M000134">edit (RoutesController)</a><br />
+    <a href="classes/TimeTasksController.html#M000016">edit (TimeTasksController)</a><br />
+    <a href="classes/UserController.html#M000033">edit (UserController)</a><br />
+    <a href="classes/BattlesController.html#M000062">edit (BattlesController)</a><br />
+    <a href="classes/ShipsController.html#M000141">edit (ShipsController)</a><br />
+    <a href="classes/PortsController.html#M000069">edit (PortsController)</a><br />
+    <a href="classes/ShipItemsController.html#M000055">equip (ShipItemsController)</a><br />
+    <a href="classes/Ship.html#M000114">evasion (Ship)</a><br />
+    <a href="classes/Character.html#M000012">exp_gain (Character)</a><br />
+    <a href="classes/MessagesController.html#M000129">forward (MessagesController)</a><br />
+    <a href="classes/Ship.html#M000120">get_crew_mods (Ship)</a><br />
+    <a href="classes/Ship.html#M000117">get_empty_slots (Ship)</a><br />
+    <a href="classes/ShipAttribute.html#M000050">get_max_slots (ShipAttribute)</a><br />
+    <a href="classes/Ship.html#M000118">get_used_slots (Ship)</a><br />
+    <a href="classes/User.html#M000049">give_encrypted (User)</a><br />
+    <a href="classes/Character.html#M000007">goldrush_check? (Character)</a><br />
+    <a href="classes/SiteController.html#M000089">help (SiteController)</a><br />
+    <a href="classes/Ship.html#M000115">hitpoints (Ship)</a><br />
+    <a href="classes/User.html#M000042">inbox (User)</a><br />
+    <a href="classes/SentController.html#M000121">index (SentController)</a><br />
+    <a href="classes/NewsPostsController.html#M000101">index (NewsPostsController)</a><br />
+    <a href="classes/ShipAttributesController.html#M000076">index (ShipAttributesController)</a><br />
+    <a href="classes/MerchantsController.html#M000020">index (MerchantsController)</a><br />
+    <a href="classes/MessagesController.html#M000125">index (MessagesController)</a><br />
+    <a href="classes/ItemsController.html#M000035">index (ItemsController)</a><br />
+    <a href="classes/TimeTasksController.html#M000013">index (TimeTasksController)</a><br />
+    <a href="classes/RoutesController.html#M000131">index (RoutesController)</a><br />
+    <a href="classes/ShipsController.html#M000138">index (ShipsController)</a><br />
+    <a href="classes/CharactersController.html#M000093">index (CharactersController)</a><br />
+    <a href="classes/SiteController.html#M000088">index (SiteController)</a><br />
+    <a href="classes/BattlesController.html#M000058">index (BattlesController)</a><br />
+    <a href="classes/UserController.html#M000027">index (UserController)</a><br />
+    <a href="classes/PortsController.html#M000066">index (PortsController)</a><br />
+    <a href="classes/MailboxController.html#M000086">index (MailboxController)</a><br />
+    <a href="classes/ApplicationHelper.html#M000169">link_to_back (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000151">logged_in? (ApplicationHelper)</a><br />
+    <a href="classes/UserController.html#M000028">login (UserController)</a><br />
+    <a href="classes/User.html#M000045">login! (User)</a><br />
+    <a href="classes/UserController.html#M000029">logout (UserController)</a><br />
+    <a href="classes/User.html#M000047">logout (User)</a><br />
+    <a href="classes/User.html#M000046">logout! (User)</a><br />
+    <a href="classes/ShipsController.html#M000145">move (ShipsController)</a><br />
+    <a href="files/app/helpers/application_helper_rb.html#M000001">move_merchant (app/helpers/application_helper.rb)</a><br />
+    <a href="classes/ShipsController.html#M000146">move_ship (ShipsController)</a><br />
+    <a href="classes/ApplicationHelper.html#M000157">moving_progress (ApplicationHelper)</a><br />
+    <a href="classes/ApplicationHelper.html#M000156">moving_time_left (ApplicationHelper)</a><br />
+    <a href="classes/MerchantItem.html#M000083">name (MerchantItem)</a><br />
+    <a href="classes/ShipItem.html#M000074">name (ShipItem)</a><br />
+    <a href="classes/ApplicationHelper.html#M000150">nav_link (ApplicationHelper)</a><br />
+    <a href="classes/PortsController.html#M000068">new (PortsController)</a><br />
+    <a href="classes/TimeTasksController.html#M000015">new (TimeTasksController)</a><br />
+    <a href="classes/ItemsController.html#M000037">new (ItemsController)</a><br />
+    <a href="classes/MerchantsController.html#M000022">new (MerchantsController)</a><br />
+    <a href="classes/ShipsController.html#M000140">new (ShipsController)</a><br />
+    <a href="classes/CharactersController.html#M000096">new (CharactersController)</a><br />
+    <a href="classes/NewsPostsController.html#M000103">new (NewsPostsController)</a><br />
+    <a href="classes/ShipItemsController.html#M000051">new (ShipItemsController)</a><br />
+    <a href="classes/BattlesController.html#M000061">new (BattlesController)</a><br />
+    <a href="classes/ShipAttributesController.html#M000078">new (ShipAttributesController)</a><br />
+    <a href="classes/SentController.html#M000123">new (SentController)</a><br />
+    <a href="classes/RoutesController.html#M000133">new (RoutesController)</a><br />
+    <a href="classes/ApplicationHelper.html#M000167">not_trade? (ApplicationHelper)</a><br />
+    <a href="classes/Character.html#M000010">olsturdy_check? (Character)</a><br />
+    <a href="classes/UserController.html#M000032">param_posted? (UserController)</a><br />
+    <a href="classes/Character.html#M000006">penny_check? (Character)</a><br />
+    <a href="classes/Message.html#M000003">prepare_copies (Message)</a><br />
+    <a href="classes/ApplicationController.html#M000110">process_time_task (ApplicationController)</a><br />
+    <a href="classes/ApplicationController.html#M000108">protect (ApplicationController)</a><br />
+    <a href="classes/UserController.html#M000031">redirect_to_create_character (UserController)</a><br />
+    <a href="classes/UserController.html#M000030">register (UserController)</a><br />
+    <a href="classes/MessagesController.html#M000128">reply (MessagesController)</a><br />
+    <a href="classes/MessagesController.html#M000130">reply_all (MessagesController)</a><br />
+    <a href="files/app/helpers/application_helper_rb.html#M000002">scheduled_timed_task (app/helpers/application_helper.rb)</a><br />
+    <a href="classes/ShipItemsController.html#M000052">sell (ShipItemsController)</a><br />
+    <a href="classes/MerchantItem.html#M000085">sell_value (MerchantItem)</a><br />
+    <a href="classes/RoutesController.html#M000132">show (RoutesController)</a><br />
+    <a href="classes/MailboxController.html#M000087">show (MailboxController)</a><br />
+    <a href="classes/TimeTasksController.html#M000014">show (TimeTasksController)</a><br />
+    <a href="classes/ItemsController.html#M000036">show (ItemsController)</a><br />
+    <a href="classes/CharactersController.html#M000095">show (CharactersController)</a><br />
+    <a href="classes/ShipsController.html#M000139">show (ShipsController)</a><br />
+    <a href="classes/MerchantsController.html#M000021">show (MerchantsController)</a><br />
+    <a href="classes/MessagesController.html#M000126">show (MessagesController)</a><br />
+    <a href="classes/SentController.html#M000122">show (SentController)</a><br />
+    <a href="classes/ShipAttributesController.html#M000077">show (ShipAttributesController)</a><br />
+    <a href="classes/ShipItemsController.html#M000053">show (ShipItemsController)</a><br />
+    <a href="classes/PortsController.html#M000067">show (PortsController)</a><br />
+    <a href="classes/BattlesController.html#M000059">show (BattlesController)</a><br />
+    <a href="classes/NewsPostsController.html#M000102">show (NewsPostsController)</a><br />
+    <a href="classes/BattlesController.html#M000060">show_battle (BattlesController)</a><br />
+    <a href="classes/CharactersController.html#M000094">skills (CharactersController)</a><br />
+    <a href="classes/ShipItem.html#M000075">slot (ShipItem)</a><br />
+    <a href="classes/Character.html#M000011">smoothsailing_check? (Character)</a><br />
+    <a href="classes/Ship.html#M000111">speed (Ship)</a><br />
+    <a href="classes/ShipsController.html#M000148">timer (ShipsController)</a><br />
+    <a href="classes/ShipItem.html#M000073">total_volume (ShipItem)</a><br />
+    <a href="classes/Character.html#M000009">trueshot_check? (Character)</a><br />
+    <a href="classes/ShipItemsController.html#M000054">unequip (ShipItemsController)</a><br />
+    <a href="classes/Character.html#M000005">unspent_points (Character)</a><br />
+    <a href="classes/Character.html#M000004">unspent_points_before_type_cast (Character)</a><br />
+    <a href="classes/MerchantsController.html#M000025">update (MerchantsController)</a><br />
+    <a href="classes/NewsPostsController.html#M000106">update (NewsPostsController)</a><br />
+    <a href="classes/TimeTasksController.html#M000018">update (TimeTasksController)</a><br />
+    <a href="classes/PortsController.html#M000071">update (PortsController)</a><br />
+    <a href="classes/BattlesController.html#M000064">update (BattlesController)</a><br />
+    <a href="classes/RoutesController.html#M000136">update (RoutesController)</a><br />
+    <a href="classes/ShipsController.html#M000143">update (ShipsController)</a><br />
+    <a href="classes/UserController.html#M000034">update (UserController)</a><br />
+    <a href="classes/ShipAttributesController.html#M000081">update (ShipAttributesController)</a><br />
+    <a href="classes/CharactersController.html#M000099">update (CharactersController)</a><br />
+    <a href="classes/ItemsController.html#M000040">update (ItemsController)</a><br />
+    <a href="classes/ShipsController.html#M000147">update_distance (ShipsController)</a><br />
+    <a href="classes/User.html#M000044">validate (User)</a><br />
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<h1>Editing battle</h1>
+
+<% form_for(@battle) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </p>
+  <p>
+    <%= f.label :ship1_id %><br />
+    <%= f.text_field :ship1_id %>
+  </p>
+  <p>
+    <%= f.label :ship2_id %><br />
+    <%= f.text_field :ship2_id %>
+  </p>
+  <p>
+    <%= f.label :recap %><br />
+    <%= f.text_area :recap %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @battle %> |
+<%= link_to 'Back', battles_path %>

@@ -1,0 +1,32 @@
+<h1>Listing items</h1>
+
+<table border="1">
+<th>Item</th>
+<th>Type</th>
+<tr>
+<td valign="top" >
+<% @items.each do |item| %>
+<div id="listFormat">
+    <%= link_to item.name, item %>
+</div>
+<% end %>
+</td>
+
+<td valign="top" >
+<% @items.each do |item| %>
+<div id="listFormat">
+    <%= item.slot %>
+</div>
+<% end %>
+</td>
+<td>
+<div float="right" valign="top">
+<%= image_tag 'treasure.jpg' %>
+</div>
+</td>
+</tr>
+</table>
+<br />
+<% if admin? %>
+  <%= link_to 'New item', new_item_path %>
+<% end %>

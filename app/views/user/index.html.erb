@@ -1,0 +1,20 @@
+<h1>World News</h1>
+
+  	<% if admin? %>
+    <td><%= link_to 'New Post', new_news_post_path %></td>
+	<% end %>
+<hr>
+
+<% @news_posts.each do |news_post| %>
+
+<p><b><%=h news_post.subject %></b><br><br>
+	  <%=h news_post.body %><br><br>
+	  <%=h news_post.created_at.to_s(:long) %><br>
+	  <%=h news_post.author %></p>
+	<% if admin? %>
+<%= link_to 'Edit', edit_news_post_path(news_post) %> | <%= link_to 'Delete', news_post, :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+	  <hr>
+<% end %>
+
+<br />

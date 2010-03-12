@@ -1,0 +1,69 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: At Sea
+  id: 1
+
+two:
+  name: Boston, MA
+  id: 2
+
+three:
+  name: New York, NY
+  id: 3
+  
+four:
+  name: Washington, DC
+  id: 4
+  
+five:
+  name: Charleston, SC
+  id: 5
+  
+six:
+  name: Miami, FL
+  id: 6
+  
+seven:
+  name: Cuba
+  id: 7
+  
+eight:
+  name: Haiti
+  id: 8
+
+nine:
+  name: Puerto Rico
+  id: 9
+  
+ten:
+  name: Jamaica
+  id: 10
+
+eleven:
+  name: Colombia
+  id: 11
+
+twelve:
+  name: Panama
+  id: 12
+
+thirteen:
+  name: Honduras
+  id: 13
+
+fourteen:
+  name: Belize
+  id: 14
+
+fiftenn:
+  name: Mexico
+  id: 15
+
+sixteen:
+  name: Galveston, TX
+  id: 16
+  
+seventeen:
+  name: New Orleans, LA
+  id: 17

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<%= javascript_include_tag :defaults %>
+	<%= javascript_include_tag "jsProgressBarHandler" %>
+	<%= javascript_include_tag "dhtmlwindow" %>
+	<%= javascript_include_tag "battle" %>
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title><%= @title %></title>
+		<%= stylesheet_link_tag "site" %>
+		<%= stylesheet_link_tag "dhtmlwindow" %>
+		<%= javascript_include_tag :defaults %> 
+	</head>
+	
+	<body>
+		<div id="whole_page">
+			<%  if logged_in? -%>
+	   			<div id="header"> <%= link_to image_tag( 'Logo.png', :border=>0), :action=> 'index', :controller => 'user' %></div>
+	       	<%  else  -%> 
+		  		<div id="header"> <%= link_to image_tag( 'Logo.png', :border=>0), :action=> 'index', :controller => 'site' %></div>
+	       	<%  end  -%> 
+		<div id="nav">
+    		<span  style="float:   right"> 
+    			<%  if logged_in? -%>
+					<%= nav_link "Messenger", "mailbox", "index"   %>
+					<% if (count_unread>0) %>
+						<%= image_tag 'Mail.gif' %>
+					<%  end  %> |
+					<% if @character = Character.find_by_user_id(session[:user_id]) %>
+            			<%= nav_link "#{@character.name}", "characters", "#{@character.id}" %>  |
+		     		<% end %> 
+					<% if current_ship %>
+        	    		<%= nav_link "My Ship", "ships", "#{current_ship.id}" %>  |
+	     			<% end %> 
+					<% if current_ship %>
+					<%= nav_link "My Port","ports", "#{current_ship.port.id}" %> |
+					<%end%>
+          			<%= nav_link "Logout", "user", "logout"   %> 
+	       		<%  else  -%> 
+    	      		<%= nav_link "Register", "user", "register"    %> | 
+        	  		<%= nav_link "Login", "user", "login"  %> 
+       			<%  end  -%> 
+			</span> 
+  		
+	       		<%  if logged_in? -%>
+  					<%=  nav_link "News", "user", "index"  %>  | 
+  					<%=  nav_link "Map", "ports", "index" %> |
+	  				<%=  nav_link "Items", "items", "index" %> 
+       			<%  else  -%> 
+  					<%=  nav_link "Home", "site", "index"  %>  | 
+  					<%=  nav_link "About Us", "site", "about"  %> | 
+	  				<%=  nav_link "Help", "site", "help"  %> 
+				<%  end  -%> 
+				<%  if admin? -%>
+  					| <%=  nav_link "Characters", "characters", "index" %> |
+  					<%=  nav_link "Ships", "ships", "index" %> |
+	  				<%=  nav_link "Battles", "battles", "index"%> |
+					<%=  nav_link "Routes", "routes", "index"%> 
+     
+				<% end %> 
+		</div>
+		<div id="content"> 
+			<% if flash[:notice] -%> 
+			<div id="notice"><%= flash[:notice] %></div> 
+				<% end %> 
+				<%= @content_for_layout %> 
+			</div> 
+			
+				<%  if admin? -%>
+			<%  if ENV["RAILS_ENV"] == "development" %>
+          		<div id="debug">
+            		<a href="#" onclick="Element.toggle('params_debug_info'); return false">params</a> |
+            		<a href="#" onclick="Element.toggle('session_debug_info'); return false">session</a> | 
+					<a href="#" onclick="Element.toggle('env_debug_info'); return false"> env</a>  | 
+          			<a href="#" onclick="Element.toggle('request_debug_info'); return false"> request</a> 
+		  			<fieldset id="params_debug_info" class="debug_info" style="display: none;"> 
+            		<legend>params</legend> 
+            			<%=  debug(params)   %> 
+          			</fieldset> 
+          			<fieldset id="session_debug_info" class="debug_info" style="display: none;"> 
+            		<legend>session</legend> 
+            			<%=  debug(session)    %> 
+            		</fieldset> 
+            		<fieldset id="env_debug_info" class="debug_info" style="display: none;" > 
+					<legend>env</legend> 
+              			<%= debug(request.env) %> 
+            		</fieldset> 
+            		<fieldset id="request_debug_info" class="debug_info" style="display: none;" > 
+					<legend>request</legend> 
+              			<%= debug(request)  %> 
+            		</fieldset> 
+          		</div> 
+				
+				<% end %> 
+       		<%  end  %> 
+		</div> 
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<h1>World Map</h1>
+<table>
+<tr>
+	| <%= link_to 'Set Sail', :controller => 'ships', :action => 'move', :id => current_ship.id %> |
+<td>
+</table>
+</td><td>
+
+<div align="center">
+<img src="../images/pirate_map_800.png" usemap = #example border=0>
+<map name=example>
+	<area shape=circle Coords=586,11,5,5 Href="ports/2">
+	<area shape=circle Coords=520,36,5,5 Href="ports/3">
+	<area shape=circle Coords=470,78,5,5 Href="ports/4">
+	<area shape=circle Coords=417,191,5,5 Href="ports/5">
+	<area shape=circle Coords=400,347,5,5 Href="ports/6">
+	<area shape=circle Coords=354,395,5,5 Href="ports/7">
+	<area shape=circle Coords=558,482,5,5 Href="ports/8">
+	<area shape=circle Coords=674,492,5,5 Href="ports/9">
+	<area shape=circle Coords=459,493,5,5 Href="ports/10">
+	<area shape=circle Coords=499,643,5,5 Href="ports/11">
+	<area shape=circle Coords=417,667,5,5 Href="ports/12">
+	<area shape=circle Coords=296,536,5,5 Href="ports/13">
+	<area shape=circle Coords=238,500,5,5 Href="ports/14">
+	<area shape=circle Coords=49,423,5,5 Href="ports/15">
+	<area shape=circle Coords=70,289,5,5 Href="ports/16">
+	<area shape=circle Coords=190,255,5,5 Href="ports/17">
+</map> 
+</div>
+
+</td></tr>
+</table>
+
+<br />
+
+<% if admin? %>
+<%= link_to 'New port', new_port_path %>
+<% end %>

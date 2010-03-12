@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>create (BattlesController)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File app/controllers/battles_controller.rb, line 44</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>
+    <span class="ruby-ivar">@battle</span> = <span class="ruby-constant">Battle</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-identifier">:battle</span>])
+    
+    <span class="ruby-ivar">@ship1</span> = <span class="ruby-constant">Ship</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@battle</span>.<span class="ruby-identifier">ship1_id</span>)
+    <span class="ruby-ivar">@ship2</span> = <span class="ruby-constant">Ship</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@battle</span>.<span class="ruby-identifier">ship2_id</span>)
+    <span class="ruby-ivar">@character</span> = <span class="ruby-constant">Character</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">1</span>)
+ 
+    <span class="ruby-identifier">hp1</span> = <span class="ruby-ivar">@ship1</span>.<span class="ruby-identifier">hitpoints</span>
+    <span class="ruby-identifier">hp2</span> = <span class="ruby-ivar">@ship2</span>.<span class="ruby-identifier">hitpoints</span>
+    <span class="ruby-identifier">battleover</span> = <span class="ruby-keyword kw">false</span>
+    <span class="ruby-identifier">battleresult</span> = <span class="ruby-value str">&quot;&quot;</span>
+    
+    <span class="ruby-keyword kw">while</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">battleover</span>)
+      <span class="ruby-ivar">@ship1</span>.<span class="ruby-identifier">ship_items</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">itm</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">itm</span>.<span class="ruby-identifier">equiped</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">slot</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;weapon&quot;</span>)
+          <span class="ruby-keyword kw">while</span>(<span class="ruby-ivar">@character</span>.<span class="ruby-identifier">shootingblind!</span>=<span class="ruby-value">0</span>)
+            <span class="ruby-identifier">battleresult</span> <span class="ruby-operator">+=</span>  <span class="ruby-node">&quot;test values: #{itm.item.accuracy_w} #{itm.item.attack_w}  #{@ship1.name} tries shooting blindly and lowers his accuracy to boost his damage! \n&quot;</span>
+            <span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">accuracy_w</span>= <span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">accuracy_w</span><span class="ruby-operator">*</span><span class="ruby-value">0</span><span class="ruby-value">.70</span>
+            <span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">attack_w</span>= <span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">attack_w</span><span class="ruby-operator">*</span><span class="ruby-value">1.12</span>
+            <span class="ruby-identifier">battleresult</span> <span class="ruby-operator">+=</span>  <span class="ruby-node">&quot;test values: #{itm.item.accuracy_w} #{itm.item.attack_w}  &quot;</span>
+         <span class="ruby-ivar">@character</span>.<span class="ruby-identifier">shootingblind</span>= <span class="ruby-ivar">@character</span>.<span class="ruby-identifier">shootingblind</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+            <span class="ruby-keyword kw">end</span>
+           <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">accuracy_w</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">10</span>))
+             <span class="ruby-identifier">hp2</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">attack_w</span>
+              <span class="ruby-identifier">battleresult</span> = <span class="ruby-node">&quot;#{battleresult}#{@ship1.name} Hits #{@ship2.name} for #{itm.item.attack_w} test value #{@character.shootingblind} \n&quot;</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">battleresult</span> = <span class="ruby-node">&quot;#{battleresult}#{@ship1.name} Misses\n&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">battleresult</span> = <span class="ruby-node">&quot;#{battleresult} NEXT SHIP\n&quot;</span>
+      <span class="ruby-ivar">@ship2</span>.<span class="ruby-identifier">ship_items</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">itm</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">itm</span>.<span class="ruby-identifier">equiped</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">slot</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;weapon&quot;</span>)
+          <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">accuracy_w</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rand</span>(<span class="ruby-value">10</span>))
+            <span class="ruby-identifier">hp1</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">itm</span>.<span class="ruby-identifier">item</span>.<span class="ruby-identifier">attack_w</span>
+            <span class="ruby-identifier">battleresult</span> = <span class="ruby-node">&quot;#{battleresult}#{@ship2.name} Hits #{@ship1.name} for #{itm.item.attack_w}\n&quot;</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">battleresult</span> = <span class="ruby-node">&quot;#{battleresult}#{@ship2.name} Misses\n&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">battleresult</span> = <span class="ruby-node">&quot;#{battleresult}-----NEXT TURN-----\n&quot;</span>
+      <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">hp2</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">hp1</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>)
+        <span class="ruby-identifier">battleover</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">hp2</span> <span class="ruby-operator">&lt;=</span><span class="ruby-value">0</span>)
+      <span class="ruby-identifier">battleresult</span> = <span class="ruby-node">&quot;#{battleresult}#{@ship1.name} WON\n&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">hp1</span> <span class="ruby-operator">&lt;=</span><span class="ruby-value">0</span>)
+      <span class="ruby-identifier">battleresult</span> = <span class="ruby-node">&quot;#{battleresult}#{@ship2.name} WON\n&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-ivar">@battle</span>.<span class="ruby-identifier">recap</span> = <span class="ruby-identifier">battleresult</span>
+
+    <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@battle</span>.<span class="ruby-identifier">save</span>
+        <span class="ruby-identifier">flash</span>[<span class="ruby-identifier">:notice</span>] = <span class="ruby-value str">'Battle was successfully created.'</span>
+        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@battle</span>) }
+        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-identifier">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@battle</span>, <span class="ruby-identifier">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:created</span>, <span class="ruby-identifier">:location</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@battle</span> }
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;new&quot;</span> }
+        <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-identifier">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@battle</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-identifier">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:unprocessable_entity</span> }
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

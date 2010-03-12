@@ -1,0 +1,82 @@
+<table frame="void">
+<tr>
+<td valign="top">
+<h1>Ship</h1>
+<p>
+  <h2><%=h @ship.name %></h2>
+  <b>HP: <%= Integer(@ship.hitpoints) %> / <%= Integer(@ship.hitpoints) %></b>
+  <br />
+
+
+</p>
+  
+<p>
+  <b>Current Location:</b>
+  <%= link_to @ship.port.name, @ship.port %>
+<%  if currently_moving -%>
+	- Sailing to -> <%= link_to currently_moving_to.name, currently_moving_to %>
+  <%= periodically_call_remote :update    => 'time_slot',
+                               :url       => { :action => :timer },
+                               :frequency => 3.0 %> 
+		<div id="time_slot">
+			<b>ETA:</b> <%= moving_time_left %><br>
+		</div>  
+		<% else %>
+		<br>
+	<%  end  -%> 
+</p>
+<%= image_tag 'ship_s.jpg' %>
+</td>
+
+<td valign="top">
+  <br />
+  <br />
+  <br />
+  <br />
+  <h3>Ship Stats:</h3>
+  <div id="listFormat2">
+  <li>Speed: <%= (@ship.speed*100).round/100.0  %></li>
+  <li>Attack: <%= (@ship.attack*100).round/100.0  %></li>
+  <li>Accuracy: <%= (@ship.accuracy*100).round/100.0  %></li>
+  <li>Evasion:<%= (@ship.evasion*100).round/100.0  %></li>
+  </div>
+
+  <p><b>Cargo Space:</b> <%=current_cargo  %> / <%= current_ship_attributes.cargo%></p>
+  <h3>Inventory:</h3>
+  <% currslot = @ordereditems.first.slot %>
+  <%= currslot.capitalize %> : <%=h @ship.get_used_slots(currslot) %> / <%=h @ship.ship_attribute.get_max_slots(currslot) %> slots used <br /> 
+	<% @ordereditems.each do |item| %>
+	<% if item.slot != currslot %>
+		<% currslot = item.slot %>
+		<% if currslot != "trade" %>
+			<%= currslot.capitalize %> : <%=h @ship.get_used_slots(currslot) %> / <%=h @ship.ship_attribute.get_max_slots(currslot) %> slots used <br /> 
+		<% else%>
+			<%= currslot.capitalize %> Items : <br /> 
+		<% end %>
+	<% end %>
+	<div id="listFormat">
+		<%= item.quantity %> <%= link_to item.name, item %>
+	   	<% if not_trade?(item.item_id) %>
+			<% if(item.equiped) %>
+		   		Equipped 
+			<% else %>
+				 - <%= item.total_volume %> Cargo
+			<% end %>
+			<% if (item.equiped) %>
+				<%= button_to "Unequip", { :controller => "ship_items", :action => "unequip", :id => item.id}, {:class => "btn", :onmouseover => "this.className='btn btnhov'", :onmouseout => "this.className='btn'" } %> 
+			<% else %> 
+				<%= button_to "Equip", { :controller => "ship_items", :action => "equip", :id => item.id}, {:class => "btn" , :onmouseover => "this.className='btn btnhov'" , :onmouseout => "this.className='btn'"}  %>
+			<% end %>
+
+		<% else %>
+				 - <%= item.total_volume %> Cargo
+	   <% end %>
+	</div>
+	<% end %>
+</td>
+</tr>
+</table>
+
+<% if @ship.character.user.id == session[:user_id] %> 
+<%= link_to 'Set Sail', :controller => 'ships', :action => 'move', :id => @ship %> 
+<% end %>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to (TreeTestWithEagerLoading)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File vendor/plugins/acts_as_tree/test/acts_as_tree_test.rb, line 194</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to</span>
+    <span class="ruby-identifier">leaf_node</span> = <span class="ruby-constant">RecursivelyCascadedTreeMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">:first</span>, <span class="ruby-identifier">:include</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:parent</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:parent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:parent</span> } }, <span class="ruby-identifier">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'mixins.id DESC'</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-ivar">@rc1</span>, <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">leaf_node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">parent</span> }
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

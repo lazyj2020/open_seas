@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @time_task.name %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%=h @time_task.task %>
+</p>
+
+<p>
+  <b>Param1:</b>
+  <%=h @time_task.param1 %>
+</p>
+
+<p>
+  <b>Param2:</b>
+  <%=h @time_task.param2 %>
+</p>
+
+<p>
+  <b>Param3:</b>
+  <%=h @time_task.param3 %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%=h @time_task.when %>
+</p>
+
+
+<%= link_to 'Edit', edit_time_task_path(@time_task) %> |
+<%= link_to 'Back', time_tasks_path %>

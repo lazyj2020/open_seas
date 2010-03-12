@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_registration_failure (UserControllerTest)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File test/functional/user_controller_test.rb, line 59</span>
+  <span class="ruby-keyword kw">def</span>  <span class="ruby-identifier">test_registration_failure</span> 
+    <span class="ruby-identifier">post</span> <span class="ruby-identifier">:register</span>, <span class="ruby-identifier">:user</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:account</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;tes/gtga&quot;</span>, 
+                               <span class="ruby-identifier">:email</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;test@tt.tt&quot;</span>, 
+                               <span class="ruby-identifier">:password</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;ttt&quot;</span> } 
+    <span class="ruby-identifier">assert_response</span> <span class="ruby-identifier">:success</span> 
+    <span class="ruby-identifier">assert_template</span> <span class="ruby-value str">&quot;register&quot;</span> 
+
+ 
+    <span class="ruby-identifier">assert_tag</span> <span class="ruby-value str">&quot;div&quot;</span>, <span class="ruby-identifier">:attributes</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;errorExplanation&quot;</span>, 
+                                       <span class="ruby-identifier">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;errorExplanation&quot;</span> } 
+ 
+  <span class="ruby-identifier">assert_tag</span>   <span class="ruby-value str">&quot;li&quot;</span>,  <span class="ruby-identifier">:content</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp re">/Account/</span> 
+  <span class="ruby-identifier">assert_tag</span>   <span class="ruby-value str">&quot;li&quot;</span>,  <span class="ruby-identifier">:content</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp re">/Password/</span> 
+
+ 
+    <span class="ruby-identifier">error_div</span> = { <span class="ruby-identifier">:tag</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;div&quot;</span>, <span class="ruby-identifier">:attributes</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;fieldWithErrors&quot;</span> } } 
+
+
+    <span class="ruby-identifier">assert_tag</span> <span class="ruby-value str">&quot;input&quot;</span>, 
+               <span class="ruby-identifier">:attributes</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;user[account]&quot;</span>, 
+                                 <span class="ruby-identifier">:value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;tes/gtga&quot;</span> }, 
+               <span class="ruby-identifier">:parent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error_div</span> 
+
+    <span class="ruby-identifier">assert_tag</span> <span class="ruby-value str">&quot;input&quot;</span>, 
+               <span class="ruby-identifier">:attributes</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;user[password]&quot;</span>, 
+                                 <span class="ruby-identifier">:value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">nil</span> }, 
+               <span class="ruby-identifier">:parent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error_div</span> 
+               
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

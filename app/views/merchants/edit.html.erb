@@ -1,0 +1,24 @@
+<h1>Editing merchant</h1>
+
+<% form_for(@merchant) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :port_id %><br />
+    <%= f.text_field :port_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @merchant %> |
+<%= link_to 'Back', merchants_path %>

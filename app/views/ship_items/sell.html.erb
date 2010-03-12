@@ -1,0 +1,20 @@
+<h1>Selling <%= Item.find(params[:item]).name %> for <%= params[:value] %> gold apiece</h1>
+You have <%= if (current_ship_items_item(params[:item]) != nil)
+			current_ship_items_item(params[:item]).quantity
+			else
+			0
+end
+
+  %> of it. <br>
+
+<% form_for :ship_item, @ship_item, :url => { :action => "delete" } do |f| %>
+
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= submit_tag 'Sell' %> 
+  </p>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>How many <%= @merchant_item.name %> @ <%= @merchant_item.value %> gold</h1>
+
+<% form_for(@ship_item) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.submit 'Complete Sale' %>
+  </p>
+<% end %>

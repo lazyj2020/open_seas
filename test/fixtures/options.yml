@@ -1,0 +1,25 @@
+# Auto-generated template
+1:
+  id: 1
+  typ: atk
+  opt: level +/-
+  
+2:
+  id: 2
+  typ: atk
+  opt: level <
+  
+3:
+  id: 3
+  typ: atk
+  opt: all
+  
+4:
+  id: 4
+  typ: flee
+  opt: all  
+5:
+  id: 5
+  typ: flee
+  opt: HP% <
+

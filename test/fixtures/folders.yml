@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  parent_id: 0
+  name: Inbox
+  
+two:
+  user_id: 2
+  parent_id: 0
+  name: Inbox
+tree:
+  user_id: 3
+  parent_id: 0
+  name: Inbox
+four:
+  user_id: 4
+  parent_id: 0
+  name: Inbox
+five:
+  user_id: 5
+  parent_id: 0
+  name: Inbox
+six:
+  user_id: 6
+  parent_id: 0
+  name: Inbox

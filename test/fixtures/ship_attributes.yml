@@ -1,0 +1,45 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  ship_id: 1
+  id: 1
+  cargo: 100
+  weapon_slot: 20
+  mast_slot: 3
+  crew_slot: 15
+  custom_slot: 5
+  structure: 50
+  rudder_slot: 1
+
+two:
+  ship_id: 2
+  id: 2
+  cargo: 100
+  weapon_slot: 20
+  mast_slot: 3
+  crew_slot: 15
+  custom_slot: 5
+  structure: 50
+  rudder_slot: 2
+
+three:
+  ship_id: 3
+  id: 3
+  cargo: 100
+  weapon_slot: 20
+  mast_slot: 3
+  crew_slot: 15
+  custom_slot: 5
+  structure: 50
+  rudder_slot: 1
+  
+four:
+  ship_id: 4
+  id: 4
+  cargo: 100
+  weapon_slot: 20
+  mast_slot: 3
+  crew_slot: 15
+  custom_slot: 5
+  structure: 50
+  rudder_slot: 1

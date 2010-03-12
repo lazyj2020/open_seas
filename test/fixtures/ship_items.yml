@@ -1,0 +1,237 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+j1:
+  id: 100
+  item_id: 18
+  ship_id: 1
+  quantity: 1
+  equiped: true
+j2:
+  id: 101
+  item_id: 19
+  ship_id: 1
+  quantity: 1
+  equiped: true
+j3:
+  id: 102
+  item_id: 20
+  ship_id: 1
+  quantity: 1
+  equiped: true
+j4:
+  id: 103
+  item_id: 21
+  ship_id: 2
+  quantity: 1
+  equiped: true
+j5:
+  id: 104
+  item_id: 22
+  ship_id: 1
+  quantity: 1
+  equiped: true
+j6:
+  id: 105
+  item_id: 24
+  ship_id: 1
+  quantity: 1
+  equiped: true
+j7:
+  id: 106
+  item_id: 24
+  ship_id: 1
+  quantity: 1
+  equiped: true
+  
+
+PaulShip1:
+  id: 2
+  item_id: 28
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+PaulShip2:
+  id: 3
+  item_id: 28
+  ship_id: 2
+  quantity: 1
+  equiped: true
+
+PaulShip3:
+  id: 4
+  item_id: 25
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+five:
+  id: 5
+  item_id: 4
+  ship_id: 1
+  quantity: 1
+  equiped: true
+  
+six:
+  id: 6
+  item_id: 3
+  ship_id: 1
+  quantity: 1
+  equiped: true
+
+seven:
+  id: 7
+  item_id: 9
+  ship_id: 1
+  quantity: 1
+  equiped: true
+  
+eight:
+  id: 8
+  item_id: 9
+  ship_id: 1
+  quantity: 1
+  equiped: true
+  
+PaulShip4:
+  id: 9
+  item_id: 25
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+PaulShip5:
+  id: 10
+  item_id: 23
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+eleven:
+  id: 11
+  item_id: 10
+  ship_id: 3
+  quantity: 1
+  equiped: true
+  
+tianship:
+  id: 12
+  item_id: 3
+  ship_id: 4
+  quantity: 4
+  equiped: false
+
+PaulShip6:
+  id: 13
+  item_id: 17
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+PaulShip7:
+  id: 14
+  item_id: 14
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+PaulShip8:
+  id: 15
+  item_id: 11
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+PaulShip9:
+  id: 16
+  item_id: 11
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+JW1:
+  id: 202
+  item_id: 28
+  ship_id: 3
+  quantity: 1
+  equiped: true
+  
+JW2:
+  id: 201
+  item_id: 28
+  ship_id: 3
+  quantity: 1
+  equiped: true
+
+JW3:
+  id: 203
+  item_id: 25
+  ship_id: 3
+  quantity: 1
+  equiped: true
+  
+Jw4:
+  id: 204
+  item_id: 30
+  ship_id: 3
+  quantity: 1
+  equiped: true
+  
+  
+  
+  
+t6:
+  item_id: 17
+  ship_id: 4
+  quantity: 1
+  equiped: true
+  
+t7:
+  item_id: 14
+  ship_id: 4
+  quantity: 1
+  equiped: true
+  
+t8:
+  item_id: 11
+  ship_id: 4
+  quantity: 1
+  equiped: true
+  
+t9:
+  item_id: 11
+  ship_id: 4
+  quantity: 1
+  equiped: true
+  
+  
+t1:
+  item_id: 28
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+t2:
+  item_id: 28
+  ship_id: 2
+  quantity: 1
+  equiped: true
+
+t3:
+  item_id: 25
+  ship_id: 2
+  quantity: 1
+  equiped: true
+  
+t4:
+  item_id: 25
+  ship_id: 4
+  quantity: 1
+  equiped: true
+  
+t5:
+  item_id: 23
+  ship_id: 4
+  quantity: 1
+  equiped: true
+  

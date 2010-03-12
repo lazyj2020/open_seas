@@ -1,0 +1,30 @@
+<h1>Listing time_tasks</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Task</th>
+    <th>Param1</th>
+    <th>Param2</th>
+    <th>Param3</th>
+    <th>When</th>
+  </tr>
+
+<% @time_tasks.each do |time_task| %>
+  <tr>
+    <td><%=h time_task.name %></td>
+    <td><%=h time_task.task %></td>
+    <td><%=h time_task.param1 %></td>
+    <td><%=h time_task.param2 %></td>
+    <td><%=h time_task.param3 %></td>
+    <td><%=h time_task.when %></td>
+    <td><%= link_to 'Show', time_task %></td>
+    <td><%= link_to 'Edit', edit_time_task_path(time_task) %></td>
+    <td><%= link_to 'Destroy', time_task, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New time_task', new_time_task_path %>

@@ -1,0 +1,38 @@
+<h1>Ship Attributes(Temp)</h1>
+
+<% form_for(@ship_attribute) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :cargo %><br />
+    <%= f.text_field :cargo %>
+  </p>
+  <p>
+    <%= f.label :weapon_slot %><br />
+    <%= f.text_field :weapon_slot %>
+  </p>
+  <p>
+    <%= f.label :mast_slot %><br />
+    <%= f.text_field :mast_slot %>
+  </p>
+  <p>
+    <%= f.label :crew_slot %><br />
+    <%= f.text_field :crew_slot %>
+  </p>
+  <p>
+    <%= f.label :structure %><br />
+    <%= f.text_field :structure %>
+  </p>
+  <p>
+    <%= f.label :rudder_slot %><br />
+    <%= f.text_field :rudder_slot %>
+  </p>
+  <p>
+    <%= f.label :custom_slot %><br />
+    <%= f.text_field :custom_slot %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', ship_attributes_path %>

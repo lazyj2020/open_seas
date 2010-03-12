@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_association_memoization (ScopeOutTest)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File vendor/plugins/svn/test/scope_out_test.rb, line 223</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_association_memoization</span>
+    <span class="ruby-identifier">school</span> = <span class="ruby-identifier">schools</span>(<span class="ruby-identifier">:ou</span>)
+    <span class="ruby-identifier">students_initial</span> = <span class="ruby-identifier">school</span>.<span class="ruby-identifier">students</span>.<span class="ruby-identifier">active</span>
+    <span class="ruby-identifier">students_initial_count</span> = <span class="ruby-identifier">students_initial</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">new_student</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">:school_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">school</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">:active</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>)
+    <span class="ruby-identifier">stale_students</span> = <span class="ruby-identifier">school</span>.<span class="ruby-identifier">students</span>.<span class="ruby-identifier">active</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">students_initial</span>, <span class="ruby-identifier">stale_students</span>)
+    <span class="ruby-identifier">refreshed_students</span> = <span class="ruby-identifier">school</span>.<span class="ruby-identifier">students</span>.<span class="ruby-identifier">active</span>(<span class="ruby-identifier">:reload</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">students_initial_count</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>, <span class="ruby-identifier">refreshed_students</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<p>
+  <b>Ship:</b>
+  <%=h @ship_attribute.ship.name %>
+</p>
+
+<p>
+  <b>Id:</b>
+  <%=h @ship_attribute.id %>
+</p>
+
+<p>
+  <b>Cargo:</b>
+  <%=h @ship_attribute.cargo %>
+</p>
+
+<p>
+  <b>Weapon Slots:</b>
+  <%=h @ship_attribute.weapon_slot - @ship_attribute.ship.get_empty_slots("weapon") %> / <%=h @ship_attribute.weapon_slot %>
+</p>
+
+<p>
+  <b>Mast Slots:</b>
+  <%=h @ship_attribute.mast_slot %>
+</p>
+
+<p>
+  <b>Crew Positions:</b>
+  <%=h @ship_attribute.crew_slot %>
+</p>
+
+<p>
+  <b>Custom Slots:</b>
+  <%=h @ship_attribute.custom_slot %>
+</p>
+
+<p>
+  <b>Structure:</b>
+  <%=h @ship_attribute.structure %>
+</p>
+
+<p>
+  <b>Rudder Slots:</b>
+  <%=h @ship_attribute.rudder_slot %>
+</p>
+
+
+| <%= link_to 'Edit', edit_ship_attribute_path(@ship_attribute) %> |

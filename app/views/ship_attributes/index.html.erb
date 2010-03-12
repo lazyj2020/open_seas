@@ -1,0 +1,34 @@
+<h1>Listing ship_attributes</h1>
+
+<table>
+  <tr>
+    <th>Ship</th>
+    <th>Id</th>
+    <th>Cargo</th>
+    <th>Weapon equip</th>
+    <th>Mast equip</th>
+    <th>Crew equip</th>
+    <th>Structure</th>
+    <th>Rudder</th>
+  </tr>
+
+<% @ship_attributes.each do |ship_attribute| %>
+  <tr>
+    <td><%=h ship_attribute.ship.name %></td>
+    <td><%=h ship_attribute.id %></td>
+    <td><%=h ship_attribute.cargo %></td>
+    <td><%=h ship_attribute.weapon_equip %></td>
+    <td><%=h ship_attribute.mast_equip %></td>
+    <td><%=h ship_attribute.crew_equip %></td>
+    <td><%=h ship_attribute.structure %></td>
+    <td><%=h ship_attribute.rudder %></td>
+    <td><%= link_to 'Show', ship_attribute %></td>
+    <td><%= link_to 'Edit', edit_ship_attribute_path(ship_attribute) %></td>
+    <td><%= link_to 'Destroy', ship_attribute, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ship_attribute', new_ship_attribute_path %>

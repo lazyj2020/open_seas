@@ -1,0 +1,53 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: Queen Anne's Revenge
+  id: 1
+  character_id: 1
+  port_id: 8
+  curr_hp: 50
+  aggressive: 0
+  attack_mod_type: all
+  attack_mod_num: 20
+  flee: 0
+  flee_mod_type: all
+  flee_mod_num: 0
+
+two:
+  name: Black Pearl
+  id: 2
+  character_id: 2
+  port_id: 7
+  curr_hp: 100
+  aggressive: 0
+  attack_mod_type: all
+  attack_mod_num: 20
+  flee: 0
+  flee_mod_type: all
+  flee_mod_num: 0
+
+three:
+  name: Flying Dutchman
+  id: 3
+  character_id: 3
+  port_id: 7
+  curr_hp: 50
+  aggressive: 0
+  attack_mod_type: all
+  attack_mod_num: 20
+  flee: 0
+  flee_mod_type: all
+  flee_mod_num: 0
+
+four:
+  name: Jolly Roger
+  id: 4
+  character_id: 4
+  port_id: 8
+  curr_hp: 50
+  aggressive: 0
+  attack_mod_type: all
+  attack_mod_num: 20
+  flee: 0
+  flee_mod_type: all
+  flee_mod_num: 0

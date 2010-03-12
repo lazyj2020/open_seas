@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>scheduled_timed_task (ApplicationHelper)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File app/helpers/application_helper.rb, line 36</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scheduled_timed_task</span>
+ <span class="ruby-comment cmt">#   @task = TimeTask.find(:first, :conditions =&gt; { :task =&gt; &quot;set_time&quot;, :param1 =&gt; &quot;system&quot;, :param2 =&gt; &quot;30m&quot; })</span>
+ <span class="ruby-comment cmt">#     if @task == nil   </span>
+        <span class="ruby-ivar">@time_task</span> = <span class="ruby-constant">TimeTask</span>.<span class="ruby-identifier">new</span>(
+        <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;30 min event&quot;</span>,
+        <span class="ruby-identifier">:task</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;timed_event&quot;</span>,
+        <span class="ruby-identifier">:param1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;system&quot;</span>,
+        <span class="ruby-identifier">:param2</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;2s&quot;</span>,
+        <span class="ruby-identifier">:when</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>.<span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">from_now</span>
+        )
+        <span class="ruby-ivar">@time_task</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-comment cmt">#    end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

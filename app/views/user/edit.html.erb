@@ -1,0 +1,25 @@
+<h1>Editing Account</h1>
+
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+<p>
+  <b>Account:</b>
+  <%= @user.account %>
+</p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  
+    <p>
+    <%= f.label 'New Password' %><br />
+    <%= f.text_field :password, :value => "", :size => User::PASSWORD_SIZE, 
+							:maxlength => User::PASSWORD_MAX_LENGTH  %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', :action => "index", :controller => "user"   %>

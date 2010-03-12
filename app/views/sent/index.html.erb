@@ -1,0 +1,36 @@
+<table>
+<tr>
+<td valign="right">
+<%= image_tag 'letter_s.jpg' %>
+</td>
+
+<td valign="top">
+ <h1>Messenger</h1>
+ <%= render :partial => "layouts/mailbox_list" if logged_in? %>
+</td>
+</tr>
+</table>
+
+
+    <%= yield %>
+	<hr>
+
+    <h3>Sent Messages</h3>
+
+    <table border="1">
+      <tr>
+        <th>To</th>
+        <th>Subject</th>
+        <th>Sent</th>
+      </tr>
+
+      <% for message in @messages %>
+        <tr>
+          <td><%=h message.recipients.map(&:account).to_sentence %></td>
+          <td><%= link_to h(message.subject), sent_path(message) %></td>
+          <td><%= distance_of_time_in_words(message.created_at, Time.now) %> ago</td>
+        </tr>
+      <% end %>
+    </table>
+    <%= will_paginate @messages %>
+

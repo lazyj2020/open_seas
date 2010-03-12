@@ -1,0 +1,72 @@
+<h1>Prepare to Set Sail</h1>
+
+<table>
+<tr>
+<td valign="top">
+<p>
+  <h3>Ship Stats:</h3>
+  <div id="listFormat2">
+  <b>HP: <%= @ship.hitpoints %></b>
+  <li>Speed: <%= (@ship.speed*100).round/100.0  %></li>
+  <li>Attack: <%= (@ship.attack*100).round/100.0  %></li>
+  <li>Accuracy: <%= (@ship.accuracy*100).round/100.0  %></li>
+  <li>Evasion:<%= (@ship.evasion*100).round/100.0  %></li>
+  </div>
+  <h3>Inventory:</h3>
+  <% currslot = @ordereditems.first.slot %>
+  <%= currslot.capitalize %> : <%=h @ship.get_used_slots(currslot) %> / <%=h @ship.ship_attribute.get_max_slots(currslot) %> slots used <br /> 
+	<% @ordereditems.each do |item| %>
+	<% if item.slot != currslot %>
+		<% currslot = item.slot %>
+		<% if currslot != "trade" %>
+			<%= currslot.capitalize %> : <%=h @ship.get_used_slots(currslot) %> / <%=h @ship.ship_attribute.get_max_slots(currslot) %> slots used <br /> 
+		<% else%>
+			<%= currslot.capitalize %> Items : <br /> 
+		<% end %>
+	<% end %>
+	<div id="listFormat">
+		<%= item.quantity %> <%= link_to item.name, item %>
+			<% if not_trade?(item.item_id) && (item.equiped) %>
+		   		Equipped 
+			<% else %>
+				 - <%= item.total_volume %> Cargo
+			<% end %>
+	</div>
+	<% end %>
+</p>
+</td>
+
+<td valign="top">
+<% form_for :ship, @ship, :url => { :action => "move_ship" } do |f| %>
+  <%= f.error_messages %>
+<p>
+  <h3>Current Port: <%= @ship.port.name %></h3>
+  Choose Destination:<br />
+  <%= f.collection_select :port_id, @destinations, :id, :name %>
+</p>
+<h3>Tactics</h3>
+<p>
+  <%= f.label :aggressive %>
+  <%= f.check_box(:aggressive) %>
+  <%= f.collection_select :attack_mod_type, @atk_options, :opt, :opt %>
+  <%= f.text_field :attack_mod_num, :value => 5, :class => "tactic_text_field" %>
+</p>
+<p>
+  <%= f.label :flee %>
+  <%= f.check_box(:flee) %>
+  <%= f.collection_select :flee_mod_type, @flee_options, :opt, :opt %>
+  <%= f.text_field :flee_mod_num, :value => 100, :class => "tactic_text_field" %>
+</p>
+
+</td>
+
+<td valign="top">
+<%= image_tag 'fire_ship_s.jpg' %>
+</td>
+</tr>
+</table>
+<p>
+  <%= f.submit 'Sail!' %>
+</p>
+<% end %>
+<%= link_to 'Back to Ship', :back %> 

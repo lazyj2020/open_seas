@@ -1,0 +1,18 @@
+<h1>Move Ship</h1>
+
+<% form_for :ship, @ship, :url => { :action => "move_ship" } do |f| %>
+  <%= f.error_messages %>
+
+<p>
+  <h2>Please select desired destination</h2>
+  <br />
+  <%= f.collection_select :port_id, @destinations, :id, :name %>
+</p>
+<p>
+  <%= f.label :aggressive %>
+  <%= f.check_box(:aggressive) %>
+</p>
+<p>
+  <%= f.submit 'Update' %>
+</p>
+<% end %>

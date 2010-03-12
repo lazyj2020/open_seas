@@ -1,0 +1,11 @@
+ <h1>Open Seas Messenger</h1>
+    
+
+	
+    <% if logged_in? %>
+      <p>Welcome, <%=h current_user.account %>.</p>
+    <% end %>
+	
+    <%= render :partial => "layouts/mailbox_list" if logged_in? %>
+    
+    <%= yield %>

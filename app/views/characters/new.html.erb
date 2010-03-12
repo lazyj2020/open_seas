@@ -1,0 +1,17 @@
+<h1>Create New Character</h1>
+
+<% form_for(@character) do |f| %>
+  <%= f.error_messages %>
+  
+  
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Continue' %>
+  </p>
+  
+  
+<% end %>

@@ -1,0 +1,40 @@
+<h1>Prepare to Set Sail</h1>
+
+<% form_for :ship, @ship, :url => { :action => "move_ship" } do |f| %>
+  <%= f.error_messages %>
+
+<table>
+<tr>
+<td valign="top">
+<p>
+  <h3>Ship Stats:</h3>
+  <div id="listFormat2">
+  <b>HP: <%= @ship.hitpoints %></b>
+  <li>Speed: <%= @ship.speed %></li>
+  <li>Attack: <%= @ship.attack %></li>
+  <li>Accuracy: <%= @ship.accuracy %></li>
+  <li>Evasion: <%= @ship.evasion %></li>
+  </div>
+  <h3>Inventory:</h3>
+</p>
+</td>
+
+<td valign="top">
+<p>
+  <h3>Current Port: <%= @ship.port.name %></h3>
+  Choose Destination:<br />
+  <%= f.collection_select :port_id, @destinations, :id, :name %>
+</p>
+<p>
+  <h3>Tactics</h3>
+  <%= f.label :aggressive %>
+  <%= f.check_box(:aggressive) %>
+</p>
+</td>
+</tr>
+</table>
+<p>
+  <%= f.submit 'Update' %>
+</p>
+<% end %>
+<%= link_to 'back', :back %> 

@@ -1,0 +1,219 @@
+body{
+	font-family:sans-serif;
+	background:black;
+	margin:0;
+	text-align:center;
+	}
+#whole_page{
+	width:80%;
+	margin:auto;
+	padding:0;
+	text-align:left;
+	border-width:1px 1px 1px;
+	border-color:black;
+	border-style:solid;
+	}
+#header{
+	color:aqua;
+	background:navy;
+	font-size:40pt;
+	/*padding:0.25em;*/
+	margin-bottom:0;
+	text-align:center;
+	}
+#nav{
+	color:white;
+	font-size:12pt;
+	font-weight:bold;
+	background:black;
+	padding:0.5em;
+	border-color:black;
+	border-style:solid;
+	border-width:0px 0px 1px;
+	}
+#nav A:visited, #nav A:link{
+	color:#FFD700;
+	text-decoration:none;
+	}
+#nav A:hover{
+	color:#FFD700;
+	border-bottom:2px solid white;
+	}
+#content{
+	color:black;
+	height:100%;
+	background:white;
+	padding:1em;
+	}
+#content A:visited, #content A:link{
+	color:navy;
+	text-decoration:none;
+	}
+#content A:hover{
+	color: #FFD700;
+	font-weight:inherit;
+	padding:.25em .05em .25em .05em;
+	background:black;
+	}
+#contenth1{
+	font-size:18pt;
+	}
+td, th{
+	color:black;
+	background:white;
+	padding:.25em .25em .25em .25em;
+	}
+	
+#listFormat{
+	color:black;
+	background:white;
+	padding:.2em .2em .2em .2em;
+	text-indent:1em;
+	}
+
+#listFormat2{
+	color:black;
+	background:white;
+	padding:.2em .2em .2em .2em;
+	}
+	
+
+/* html hack? */
+/*
+html  fieldset{ 
+  	position: relative; 
+	} 
+html  legend{ 
+  	position:absolute; 
+  	top:  -1em; 
+  	left: .5em; 
+} 
+html  fieldset  { 
+  	position:relative; 
+  	margin-top:1em; 
+  	padding-top:2em; 
+  	padding-bottom: 2em; 
+	} 
+*/
+/*  Form  Styles  */ 
+
+fieldset{ 
+  	color:#FFD700;
+  	background:black; 
+	} 
+	
+legend{ 
+  	color:aqua; 
+  	background:navy; 
+  	padding:.4em  1em; 
+	} 
+label{ 
+  	width:  10em; 
+  	float:  left;
+  	/*text-align:  right; */
+  	display:block; 
+  	margin-right: 0.2em; 
+	} 
+.form_row{ 
+  	white-space:nowrap; 
+  	padding-bottom: .5em; 
+	} 
+.submit{ 
+  	margin-left:15em; 
+	} 
+.tactic_collection{
+    width:100px;
+    }	
+.tactic_text_field{
+	width:30pt;
+    }
+
+/* DebugStyle  */ 
+
+.debug_dump{ 
+	color:black;
+  	text-align: left; 
+  	background: #ccc; 
+  	margin:0; 
+  	padding:0.5em; 
+	} 
+
+/* ErrorReportingStyles  */ 
+
+.fieldWithErrors{ 
+  	margin: 2px; 
+  	padding:2px; 
+  	background-color:red; 
+  	display:table; 
+	} 
+
+#errorExplanation{ 
+  	border:2px solid red; 
+  	padding:7px; 
+  	padding-bottom:12px; 
+  	margin-bottom:20px; 
+  	background-color:pink; 
+	} 
+
+#errorExplanation h2{ 
+	color:white; 
+  	text-align:left; 
+  	font-weight:bold; 
+  	padding:5px 5px 5px 15px; 
+  	font-size:12pt; 
+  	margin:-7px; 
+  	background-color:red; 
+	} 
+
+#errorExplanation p{ 
+  	color:black; 
+  	padding:5px; 
+	} 
+
+#errorExplanation ul li{ 
+	color:black;
+  	font-size:11pt; 
+  	list-style:square; 
+	} 
+
+
+#notice{ 
+	color:aqua;
+	border:1px solid black; 
+  	padding:1em; 
+  	margin:1em; 
+  	margin-bottom:2em; 
+  	background-color:navy; 
+  	font:bold smaller sans-serif; 
+	} 
+
+
+#debug{ 
+	text-align:center;
+    margin-top:1em; 
+    margin-left:auto; 
+	} 
+#debug  a, #debug a:visited{ 
+    color:white; 
+	text-decoration:none; 
+	} 
+#debug a:hover{
+	text-decoration:underline;
+}
+fieldset.debug_info{ 
+	text-align:left; 
+    margin:1em; 
+    background:#eee; 
+   } 
+   
+   
+input.btn { 
+/*	  color:#000; 
+border:1px solid*/
+} 
+	
+input.btnhov {
+/*  color: #FFF;
+  background: #000;
+border:1px solid*/
+}

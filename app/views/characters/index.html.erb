@@ -1,0 +1,25 @@
+<h1>Listing characters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Ship</th>
+  </tr>
+
+<% @characters.each do |character| %>
+  <tr>
+    <td><%= link_to character.name, character %></td>
+    <td><%= link_to character.ship.name, character.ship %></td>
+	<% if admin? %>
+    <td><%= link_to 'Edit', edit_character_path(character) %></td>
+    <td><%= link_to 'Destroy', character, :confirm => 'Are you sure?', :method => :delete %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if admin? %>
+<%= link_to 'New character', new_character_path %>
+<% end %>

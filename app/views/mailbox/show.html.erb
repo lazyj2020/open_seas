@@ -1,0 +1,33 @@
+<table>
+<tr>
+<td valign="right">
+<%= image_tag 'letter_s.jpg' %>
+</td>
+
+<td valign="top">
+ <h1>Messenger</h1>
+ <%= render :partial => "layouts/mailbox_list" if logged_in? %>
+</td>
+</tr>
+</table>
+	<hr>
+
+<h3><%=h @folder.name %>  <%= count_all_mail %> Mail <%= count_unread %> Unread </h3>
+
+<table border="1">
+  <tr>
+    <th>From</th>
+    <th>Subject</th>
+    <th>Received</th>
+	<th>Read</th>
+  </tr>
+  
+  <% for message in @messages %>
+    <tr>
+      <td><%=h message.author.account %></td>
+      <td><%= link_to h(message.subject), message_path(message) %></td>
+      <td><%= distance_of_time_in_words(message.created_at, Time.now) %> ago</td>
+      <td><%= h message.read %></td>
+    </tr>
+  <% end %>
+</table>

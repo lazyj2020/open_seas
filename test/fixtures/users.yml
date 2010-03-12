@@ -1,0 +1,30 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+john:
+    account: lazyj2020
+    email: lazyj2020@gmail.com
+    password: 01cfcd4f6b8770febfb40cb906715822 
+    admin: 1
+    id: 1
+    
+paul:
+    account: pnunley1
+    email: pnunley1@gmail.com
+    password: 29f73ca67d7d166fcfd643aff8a3cc13 
+    admin: 1
+    id: 2
+    
+wangster:
+    account: wangster
+    email: jessiecwang@yahoo.com
+    password: 5f4dcc3b5aa765d61d8327deb882cf99 
+    admin: 1
+    id: 3
+
+kook:
+    account: kookiekrak
+    email: kookiekrak@gmail.com
+    password: a8cfa74d970782a321ada1703a2ac618
+    admin: 1
+    id: 4
+    

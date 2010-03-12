@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_should_scope_out_old_universities_dynamically (ScopeOutTest)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File vendor/plugins/svn/test/scope_out_test.rb, line 253</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_should_scope_out_old_universities_dynamically</span>
+    <span class="ruby-identifier">old_universities</span> = <span class="ruby-constant">University</span>.<span class="ruby-identifier">find_old</span>(<span class="ruby-identifier">:all</span>)
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">old_universities</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">schools</span>(<span class="ruby-identifier">:ou</span>))
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">old_universities</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">schools</span>(<span class="ruby-identifier">:yale</span>))
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">old_universities</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">schools</span>(<span class="ruby-identifier">:harvard</span>))
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">old_universities</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">schools</span>(<span class="ruby-identifier">:cc</span>))
+
+    <span class="ruby-comment cmt">#2nd call should return the older date, i.e. it's dynamic</span>
+    <span class="ruby-identifier">old_universities_again</span> = <span class="ruby-constant">University</span>.<span class="ruby-identifier">find_old</span>(<span class="ruby-identifier">:all</span>)
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">old_universities_again</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">schools</span>(<span class="ruby-identifier">:ou</span>))
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">old_universities_again</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">schools</span>(<span class="ruby-identifier">:yale</span>))
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">old_universities_again</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">schools</span>(<span class="ruby-identifier">:harvard</span>))
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">old_universities_again</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">schools</span>(<span class="ruby-identifier">:cc</span>))
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

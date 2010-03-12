@@ -1,0 +1,47 @@
+<table frame="void">
+
+
+<tr>
+<p>
+  <h2><%=h @port.name %></h2>
+</p>
+</tr>
+
+<tr>
+<td valign="top" width="70%">
+	<b>Connecting Ports:</b><br />
+	<% @port.ends.each do |dests| %>
+	<div id="listFormat">
+		- <%= link_to dests.name, dests %><br />
+	</div>
+	<% end %>
+</td>
+
+<td valign="top">
+<% if @port.ships.count > 0 %>
+	<b>Players at Port:</b><br />
+	<% @port.ships.each do |ship| %>
+	<div id="listFormat">
+		- <%= link_to ship.character.name, ship.character %><br />
+	</div>
+	<% end %>
+<% else %>
+	<ul><b><p>(Port Empty)</p></b></ul>
+<% end %>
+
+<% if @port.merchants.count > 0 %>
+	<p><b>Available Merchants:</b></p>
+	<ul>
+	    <% @port.merchants.each do |merchant| %>
+		<div id="listFormat2">
+			<li><%= link_to merchant.name, merchant %></li>
+		</div>
+		<% end %>
+	</ul>
+<% else %>
+	<b><p>No Available Merchants</p></b>
+<% end %>
+</td>
+</tr>
+</table>
+| <%= link_to 'Set Sail', :controller => 'ships', :action => 'move', :id => current_ship.id %> |

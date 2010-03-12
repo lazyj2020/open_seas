@@ -1,0 +1,36 @@
+<h1>Editing time_task</h1>
+
+<% form_for(@time_task) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :task %><br />
+    <%= f.text_field :task %>
+  </p>
+  <p>
+    <%= f.label :param1 %><br />
+    <%= f.text_field :param1 %>
+  </p>
+  <p>
+    <%= f.label :param2 %><br />
+    <%= f.text_field :param2 %>
+  </p>
+  <p>
+    <%= f.label :param3 %><br />
+    <%= f.text_field :param3 %>
+  </p>
+  <p>
+    <%= f.label :when %><br />
+    <%= f.datetime_select :when %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @time_task %> |
+<%= link_to 'Back', time_tasks_path %>

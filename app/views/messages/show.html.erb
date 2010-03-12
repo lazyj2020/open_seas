@@ -1,0 +1,14 @@
+<h3><%=h @message.subject %></h3>
+
+<p><strong>From:</strong> <%=h @message.author.account %></p>
+<p><strong>To:</strong> <%=h @message.recipients.map(&:account).to_sentence %></p>
+<p><strong>Received:</strong> <%= @message.created_at.to_s(:long) %></p>
+
+<pre><%=h @message.body %></pre>
+<hr>
+<p>
+	<%= link_to "Reply", reply_message_path(@message) %> |
+	<%= link_to "Reply All", reply_all_message_path(@message) %> |
+	<%= link_to "Forward", forward_message_path(@message) %> |
+	<%= link_to 'Delete', message_path(@message), :confirm => 'Are you sure?' , :method => "delete" %>
+</p>

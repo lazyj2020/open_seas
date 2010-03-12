@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>combined_scope (ScopeOut::ClassMethods)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File vendor/plugins/svn/lib/scope_out.rb, line 39</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">combined_scope</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">scopes</span>, <span class="ruby-identifier">options</span> = <span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">scopes</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">scopes</span>)).<span class="ruby-identifier">blank?</span>
+      <span class="ruby-identifier">new_scope</span> = <span class="ruby-identifier">options</span> <span class="ruby-value">? </span><span class="ruby-node">&quot;with_scope(:find =&gt; #{options.inspect}) {yield}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-value str">'yield'</span>
+      <span class="ruby-identifier">scope_string</span> = <span class="ruby-identifier">scopes</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-identifier">new_scope</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">str</span>, <span class="ruby-identifier">scope</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">str</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-value str">'yield'</span>, <span class="ruby-node">&quot;with_#{scope} {yield}&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">instance_eval</span> <span class="ruby-node">&quot;def with_#{name}() #{scope_string}; end&quot;</span>
+      <span class="ruby-identifier">add_scoped_finders</span> <span class="ruby-identifier">name</span>
+      <span class="ruby-identifier">add_association_method</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

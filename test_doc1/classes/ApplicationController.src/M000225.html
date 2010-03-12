@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>process_time_task (ApplicationController)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File app/controllers/application_controller.rb, line 36</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process_time_task</span>
+    <span class="ruby-ivar">@times</span> = <span class="ruby-constant">TimeTask</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">:all</span>)
+    <span class="ruby-identifier">found</span> = <span class="ruby-keyword kw">false</span>
+    <span class="ruby-comment cmt">#Rails.logger.info(@times != nil)</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@times</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+      
+              <span class="ruby-identifier">found</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-ivar">@times</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-ivar">@task</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">task</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;timed_event&quot;</span>
+          <span class="ruby-identifier">found</span> = <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">when</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+          <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">task</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;move_ship&quot;</span>
+              <span class="ruby-ivar">@ship</span> = <span class="ruby-constant">Ship</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@task</span>.<span class="ruby-identifier">param1</span>)
+              <span class="ruby-ivar">@ship</span>.<span class="ruby-identifier">update_attribute</span>(<span class="ruby-identifier">:port_id</span>, <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">param2</span>)
+              <span class="ruby-comment cmt">#Rails.logger.info(&quot;did #{@task.name}&quot;)</span>
+              <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">destroy</span>
+            <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;timed_event&quot;</span>
+        <span class="ruby-identifier">move_merchant</span>
+              <span class="ruby-comment cmt">#do shit</span>
+                
+              <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">destroy</span>
+              <span class="ruby-identifier">scheduled_timed_task</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+   <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">found</span>
+      <span class="ruby-identifier">scheduled_timed_task</span>
+   
+   <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

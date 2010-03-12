@@ -1,0 +1,55 @@
+<table frame="void">
+<tr>
+<h1>Ship</h1>
+<p>
+  <h2><%=h @ship.name %></h2>
+  <b>HP: <%= @ship.curr_hp %> / <%= @ship.hitpoints %></b>
+</p>
+
+<p>
+  <b>Current Location:</b>
+  <%= link_to @ship.port.name, @ship.port %><br>
+<%  if currently_moving -%>
+  <%= periodically_call_remote :update    => 'time_slot',
+                               :url       => { :action => :timer },
+                               :frequency => 5.0 %> 
+		<div id="time_slot">
+			<b>ETA:</b> <%= moving_time_left %><br>
+		</div>  
+	<%  end  -%> 
+</p>
+</tr>
+
+<tr>
+<td valign="top" width="50%">
+  <h3>Ship Stats:</h3>
+  <div id="listFormat2">
+  <li>Speed: <%= (@ship.speed*100).round/100.0  %></li>
+  <li>Attack: <%= @ship.attack %></li>
+  <li>Accuracy: <%= @ship.accuracy %></li>
+  <li>Evasion: <%= @ship.evasion %></li>
+  </div>
+
+<p><b>Cargo Space:</b> <%= current_cargo %> / <%= current_ship_attributes.cargo %></p>
+</td>
+
+<td valign="top">
+<h3>Inventory:</h3>
+<p>
+	<% @ship.ship_items.each do |item| %>
+	   <%= item.quantity%> <%= link_to item.name, item %> - <%= item.total_volume %> Cargo Occupied
+	   <% if not_trade?(item.item_id) %>
+	   	Equipped: <%= item.equiped %>  <br>
+	   <% end %>
+	<% end %>
+</p>
+</td>
+</tr>
+</table>
+<p>
+<%= link_to 'Ship Attributes', @ship.ship_attribute %>
+</p>
+
+<% if @ship.character.user.id == session[:user_id] %> 
+<%= link_to 'Set Sail', :controller => 'ships', :action => 'move', :id => @ship %> 
+<% end %>

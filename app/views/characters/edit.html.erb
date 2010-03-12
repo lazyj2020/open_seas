@@ -1,0 +1,13 @@
+<h1>Editing character</h1>
+
+
+<%= form_tag :action => "edit", :id => @character.id %>
+   Name: <%= text_field "character", "negotiation"
+%><br />
+   Value: <%= text_field "item", "value"
+%><br />
+   <%= submit_tag %>
+  <%= form_tag %>
+
+<%= link_to 'Show', @character %> |
+<%= link_to 'Back', characters_path %>

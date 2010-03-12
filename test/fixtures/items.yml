@@ -1,0 +1,361 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+1:
+  id: 1
+  name: Iron
+  slot: trade
+  volume: 5
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 0
+  price_w: 100
+
+2:
+  id: 2
+  name: Rum
+  slot: trade
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 0
+  price_w: 100
+  
+3:
+  id: 3
+  name: Cotton
+  slot: trade
+  volume: 15
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0 
+  evasion_w: 0
+  price_w: 150
+  
+4:
+  id: 4
+  name: Timber
+  slot: trade
+  volume: 25
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0 
+  evasion_w: 0
+  price_w: 400
+  
+5:
+  id: 5
+  name: Silver
+  slot: trade
+  volume: 5
+  speed_w: 0
+  hitpoints_w: 0 
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 0
+  price_w: 500
+  
+6:
+  id: 6
+  name: Corn
+  slot: trade
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 0
+  price_w: 50
+  
+7:
+  id: 7
+  name: Tobacco
+  slot: trade
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 0
+  price_w: 200
+  
+8:
+  id: 8
+  name: Sugar Cane
+  slot: trade
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 0
+  price_w: 20
+  
+9:
+  id: 9
+  name: Basic Main Sail
+  slot: mast
+  volume: 2
+  speed_w: 10
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 5
+  price_w: 30
+  
+10:
+  id: 10
+  name: Advanced Main Sail
+  slot: mast
+  volume: 2
+  speed_w: 20
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 5
+  price_w: 70
+  
+11:
+  id: 11
+  name: Pro Main Sail
+  slot: mast
+  volume: 2
+  speed_w: 40
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 5
+  price_w: 150
+  
+12:
+  id: 12
+  name: Basic Jib Sail
+  slot: mast
+  volume: 1
+  speed_w: 5
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 10
+  price_w: 15
+  
+13:
+  id: 13
+  name: Advanced Jib Sail
+  slot: mast
+  volume: 1
+  speed_w: 5
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 20 
+  price_w: 40
+  
+14:
+  id: 14
+  name: Pro Jib Sail
+  slot: mast
+  volume: 1
+  speed_w: 10
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 40
+  price_w: 200
+  
+15:
+  id: 15
+  name: Basic Rudder
+  slot: rudder
+  volume: 5
+  speed_w: 2
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 1
+  evasion_w: 10
+  price_w: 20
+  
+16:
+  id: 16
+  name: Advanced Rudder
+  slot: rudder
+  volume: 5
+  speed_w: 5
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 2
+  evasion_w: 20
+  price_w: 50
+  
+17:
+  id: 17
+  name: Pro Rudder
+  slot: rudder
+  volume: 5
+  speed_w: 10
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 5
+  evasion_w: 50
+  price_w: 200
+  
+18:
+  id: 18
+  name: Gunner
+  slot: crew
+  volume: 1
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 1.5
+  accuracy_w: 0
+  evasion_w: 0
+  price_w: 200
+  
+19:
+  id: 19
+  name: Navigator
+  slot: crew
+  volume: 1
+  speed_w: 1.5
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 0
+  price_w: 200
+  
+20:
+  id: 20
+  name: Sniper
+  slot: crew
+  volume: 1
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 1.5
+  evasion_w: 0
+  price_w: 200
+  
+21:
+  id: 21
+  name: Helmsman
+  slot: crew
+  volume: 1
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: .1
+  price_w: 200
+  
+22:
+  id: 22
+  name: Carpenter
+  slot: crew
+  volume: 1
+  speed_w: 0
+  hitpoints_w: 1.5
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 0
+  price_w: 200
+  
+23:
+  id: 23
+  name: Iron Sides
+  slot: custom
+  volume: 50
+  speed_w: -5
+  hitpoints_w: 50
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: -15
+  price_w: 500
+  
+24:
+  id: 24
+  name: Composite Frame
+  slot: custom
+  volume: 50
+  speed_w: 50
+  hitpoints_w: -25
+  attack_w: 0
+  accuracy_w: 0
+  evasion_w: 20
+  price_w: 500
+
+25:
+  id: 25
+  name: Cannon
+  slot: weapon
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 5
+  accuracy_w: 3
+  evasion_w: 0
+  price_w: 5
+
+26:
+  id: 26
+  name: Long Cannon
+  slot: weapon
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 2
+  accuracy_w: 6
+  evasion_w: -1
+  price_w: 10
+  
+27:
+  id: 27
+  name: Howitzer
+  slot: weapon
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 15
+  accuracy_w: 2
+  evasion_w: 2
+  price_w: 10
+  
+28:
+  id: 28
+  name: Rifled Cannon
+  slot: weapon
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 5
+  accuracy_w: 8
+  evasion_w: -1
+  price_w: 20
+  
+29:
+  id: 29
+  name: Exploding Cannon
+  slot: weapon
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 20
+  accuracy_w: 5
+  evasion_w: 0
+  price_w: 50
+  
+30:
+  id: 30
+  name: Admin Cannon
+  slot: weapon
+  volume: 10
+  speed_w: 0
+  hitpoints_w: 0
+  attack_w: 100
+  accuracy_w: 10
+  evasion_w: 0
+  price_w: 0

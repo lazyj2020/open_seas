@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_string_finder (ScopeOutTest)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File vendor/plugins/svn/test/scope_out_test.rb, line 81</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_string_finder</span>
+    <span class="ruby-identifier">freshmen_boring</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">find_all_by_level</span>(<span class="ruby-value str">'Freshman'</span>)
+    <span class="ruby-identifier">freshmen_awesome</span> = <span class="ruby-constant">Student</span>.<span class="ruby-identifier">find_freshmen</span>(<span class="ruby-identifier">:all</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">freshmen_boring</span>.<span class="ruby-identifier">length</span>, <span class="ruby-identifier">freshmen_awesome</span>.<span class="ruby-identifier">length</span>)
+    <span class="ruby-identifier">freshmen_boring</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">bore</span><span class="ruby-operator">|</span> <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">freshmen_awesome</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">bore</span>)) }
+    <span class="ruby-identifier">freshmen_boring</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">awesome</span><span class="ruby-operator">|</span> <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">freshmen_boring</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">awesome</span>)) }
+
+    <span class="ruby-identifier">using_public_scopes</span>(<span class="ruby-constant">Student</span>) <span class="ruby-keyword kw">do</span>
+      <span class="ruby-identifier">assert_equal</span>( <span class="ruby-constant">Student</span>.<span class="ruby-identifier">find_all_by_level_and_age</span>(<span class="ruby-value str">'Freshman'</span>, <span class="ruby-value">16</span>),
+                    <span class="ruby-constant">Student</span>.<span class="ruby-identifier">with_freshmen</span>{<span class="ruby-constant">Student</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">:all</span>, <span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;age = 16&quot;</span>)})
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

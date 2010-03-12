@@ -1,0 +1,9 @@
+<p><b>Inventory:</b> <%= current_cargo %> / <%= current_ship_attributes.cargo %> Cargo</p>
+<p>
+	<% @ship.ship_items.each do |item| %>
+	   <%= item.quantity%> <%= link_to item.name, item %> - <%= item.total_volume %> Cargo Occupied
+	   <% if not_trade?(item.item_id) %>
+	   Equipped: <%= item.equiped %>  <br>
+	   <% end %>
+	<% end %>
+</p>

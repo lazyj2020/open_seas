@@ -1,0 +1,28 @@
+<p>
+  <h2><%=h @item.name %></h2>
+</p>
+
+Slot Type: <%=h @item.slot %><br />
+Cargo Volume: <%=h @item.volume %><br />
+
+  	<% flag=false%>
+	<% if @item.hitpoints_w != 0 %>
+		<li id="listFormat">Hitpoints <%=h @item.hitpoints_w %></li>
+		<%flag=true%>
+	<% end %>
+	<% if @item.attack_w != 0 %>
+		<li id="listFormat">Attack <%=h @item.attack_w %></li>
+		<%flag=true%>
+	<% end %>
+	<% if @item.speed_w != 0 %>
+		<li id="listFormat">Speed <%=h @item.speed_w %></li>
+		<%flag=true%>
+	<% end %>
+	<% if @item.accuracy_w != 0 %>
+		<li id="listFormat">Accuracy <%=h @item.accuracy_w %></li>
+		<%flag=true%>
+	<% end %>
+	<% if @item.evasion_w != 0 %>
+		<li id="listFormat">Evasion <%=h @item.evasion_w %></li>
+		<%flag=true%>
+	<% end %>

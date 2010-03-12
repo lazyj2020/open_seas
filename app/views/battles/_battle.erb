@@ -1,0 +1,17 @@
+
+<p>
+  <b>Ship1:</b>
+  <%=h Ship.find(@battle.ship1_id).name %>
+</p>
+
+<p>
+  <b>Ship2:</b>
+  <%=h Ship.find(@battle.ship2_id).name %>
+</p>
+
+<p>
+  <b>Recap:</b><br />
+  <% @recaparray.each do |line| %>
+  	<%= line %><br />
+  <% end %>
+</p>

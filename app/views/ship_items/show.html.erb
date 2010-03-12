@@ -1,0 +1,42 @@
+
+<p>
+  <b>Name:</b>
+  <%= link_to Item.find_by_id(@ship_item.item_id).name, Item.find_by_id(@ship_item.item_id) %> 
+</p>
+
+
+<p>
+  <b>On:</b>
+  <%=h Ship.find_by_id(@ship_item.ship_id).name %>
+</p>
+
+
+<p>
+  <b>Quantity:</b>
+  <%=h @ship_item.quantity %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h  Item.find_by_id(@ship_item.item_id).slot %>
+</p>
+
+<% if not_trade?(@ship_item.item_id) %>
+
+<p>
+  <b>Equipped:</b>
+  <%=h @ship_item.equiped %>
+  <%=if (@ship_item.equiped)
+	 button_to "Unequip", { :controller => "ship_items", :action => "unequip", :id => @ship_item.id}
+	else
+	 button_to "Equip", { :controller => "ship_items", :action => "equip", :id => @ship_item.id}
+	end
+ 	%>
+</p>
+
+
+<% end %>
+<% if admin? %>
+  <%= link_to 'Edit', edit_item_path(@ship_item) %> |
+<% end%>
+<%= link_to 'Back', current_ship %>

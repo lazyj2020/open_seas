@@ -1,0 +1,69 @@
+<table>
+<tr>
+<td>
+<p>
+  <b>Account:</b>
+  <%= @character.user.account %><br>
+  <b>Email:</b>
+  <%= @character.user.email %>
+</p>
+<%= link_to 'Change Email and Password', :action => "edit", :controller => "user", :id => session[:user_id] %> 
+<p>
+  <b>Name:</b>
+  <%=h @character.name %>
+</p>
+<p>
+  <b>Level:</b>
+  <%=h @character.lvl %>
+  <br /><br />
+  <b>Exp: </b><%= @character.exp%> / <%=(@character.exp_next)%>  
+  <br /><br />
+  <b>Gold: </b><%= @character.gold %>
+</p>
+
+<p>
+  <b>Ship:</b>
+  <%= link_to @ship.name, @ship %>
+</p>
+<table border="1" color="black">
+<tr>
+<th>Merchant Skill Tree</th>
+<th>Battle Skill Tree</th>
+<th>Ship Skill Tree</th>
+
+</tr>
+<tr>
+<td>Lucky Hand: <%= @character.lucky %></td>
+<td>Shooting Blind:  <%= @character.shootingblind %></td>
+<td>Cargo Reduction: <%= @character.cargoreduction%></td>
+</tr>
+<tr>
+<td>Penny Pincher: <%= @character.penny %></td>
+<td>Cannon Mastery:  <%= @character.cannonmastery %></td>
+<td>Ol'Sturdy: <%= @character.olsturdy %></td>
+</tr>
+<tr>
+	<td>Gold Rush: <%= @character.goldrush%></td>
+	<td>True Shot: <%= @character.trueshot %></td>
+	<td>Smooth Sailing: <%= @character.smoothsailing %></td>
+	</tr>
+	<tr>
+		
+	</tr>
+</table> 
+<br />
+</td>
+
+<td valign="right">
+  <div align="right">
+  	<%= image_tag 'jolly_s.png' %>
+  </div>
+</td>
+</tr>
+</table>
+<% if admin? or @character.user_id == session[:user_id] %>
+<%=  nav_link "Skill Tree", "characters/skills", @character.id %> |
+<% end %>
+<% if admin? %>
+<% end %>
+ 

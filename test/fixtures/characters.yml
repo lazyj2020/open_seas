@@ -1,0 +1,77 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: John
+  id: 1
+  user_id: 1
+  gold: 1000
+  total_points: 3
+  lvl: 1
+  exp_next: 10
+  exp: 1
+  lucky: 0
+  penny: 0
+  goldrush: 0
+  trueshot: 0
+  cannonmastery: 0
+  shootingblind: 1
+  olsturdy: 0
+  cargoreduction: 0
+  smoothsailing: 0
+two:
+  name: Paul
+  id: 2
+  user_id: 2
+  gold: 10000
+  total_points: 10
+  lvl: 1
+  exp: 9
+  exp_next: 10
+  lucky: 0
+  penny: 0
+  goldrush: 0
+  trueshot: 0
+  cannonmastery: 0
+  shootingblind: 1
+  olsturdy: 0
+  cargoreduction: 0
+  smoothsailing: 0
+three:
+  name: Jessie
+  id: 3
+  user_id: 3
+  gold: 10000
+  total_points: 13
+  lvl: 10
+  exp: 1
+  exp_next: 10
+  lucky: 0
+  penny: 0
+  goldrush: 0
+  lucky: 0
+  penny: 0
+  goldrush: 0
+  trueshot: 0
+  cannonmastery: 0
+  shootingblind: 1
+  olsturdy: 0
+  cargoreduction: 0
+  smoothsailing: 0
+four:
+  name: Tian
+  id: 4
+  user_id: 4
+  gold: 10000
+  total_points: 3
+  lvl: 1
+  exp_next: 10
+  exp: 1
+  lucky: 0
+  penny: 0
+  goldrush: 0
+  trueshot: 0
+  cannonmastery: 0
+  shootingblind: 1
+  olsturdy: 0
+  cargoreduction: 0
+  smoothsailing: 0

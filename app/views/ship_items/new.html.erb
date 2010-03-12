@@ -1,0 +1,14 @@
+<h1>Buying <%= Item.find(params[:item]).name %> for <%= params[:value] %> gold apiece</h1>
+You have <%= current_character.gold %> Gold. <br>
+You can afford <%= number_with_precision(current_character.gold/params[:value].to_i, :precision => 0) %>.<br>
+You can carry <%= (current_ship.cargo - current_cargo)/Item.find(params[:item]).volume %>.
+<% form_for(@ship_item) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </p>
+  <p>
+    <%= f.submit 'buy' %>
+  </p>
+<% end %>

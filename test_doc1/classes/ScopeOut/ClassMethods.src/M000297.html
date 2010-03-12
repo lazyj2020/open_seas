@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>method_missing_with_scope_out (ScopeOut::ClassMethods)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File vendor/plugins/svn/lib/scope_out.rb, line 53</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing_with_scope_out</span>(<span class="ruby-identifier">method_called</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-identifier">method_str</span> = <span class="ruby-identifier">method_called</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-identifier">match</span> = <span class="ruby-identifier">method_str</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">/^(find_)(all_)?(\w+)(_by_)(\w+)$/</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">match</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">match</span>[<span class="ruby-value">3</span>] <span class="ruby-operator">!=</span> <span class="ruby-value str">'all'</span>
+        <span class="ruby-comment cmt"># our scope name should be in $3</span>
+        <span class="ruby-identifier">scope_str</span> = <span class="ruby-identifier">match</span>[<span class="ruby-value">3</span>]
+        <span class="ruby-identifier">method_str</span> = <span class="ruby-identifier">match</span>.<span class="ruby-identifier">captures</span>
+        <span class="ruby-comment cmt"># delete scope name (match is omitted from captures)</span>
+        <span class="ruby-identifier">method_str</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-value">2</span>)
+        <span class="ruby-identifier">method_str</span> = <span class="ruby-identifier">method_str</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'__'</span>, <span class="ruby-value str">'_'</span>)
+        <span class="ruby-identifier">scope_sym</span> = <span class="ruby-node">&quot;with_#{scope_str}&quot;</span>.<span class="ruby-identifier">to_sym</span>
+        <span class="ruby-comment cmt"># call ActiveRecord method missing to do the real work,</span>
+        <span class="ruby-comment cmt"># after wrapping it in our scope</span>
+        <span class="ruby-identifier">send</span> <span class="ruby-identifier">scope_sym</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">send</span> <span class="ruby-identifier">method_str</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-comment cmt"># doesn't match our string. pass it on to ActiveRecord.method_missing</span>
+        <span class="ruby-identifier">method_missing_without_scope_out</span>(<span class="ruby-identifier">method_called</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

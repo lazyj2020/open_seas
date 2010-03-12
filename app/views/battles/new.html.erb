@@ -1,0 +1,16 @@
+<h1>Battle Simulator</h1>
+
+<% form_for(@battle) do |f| %>
+  <%= f.error_messages %>
+  <p>
+  	<%= f.collection_select :ship1_id, @ships, :id, :name %>
+  </p>
+  <p>
+    <%= f.collection_select :ship2_id, @ships, :id, :name %>
+  </p>
+  <p> 
+    <%= f.submit 'Start Battle' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', battles_path %>

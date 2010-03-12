@@ -1,0 +1,170 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  item_id: 1
+  buy_w: 1
+  sell_w: 0.5
+  merchant_id: 1
+
+two:
+  id: 2
+  item_id: 1
+  buy_w: 2.5
+  sell_w: 1.5
+  merchant_id: 2
+  
+three:
+  id: 3
+  item_id: 4
+  buy_w: 5
+  sell_w: 3
+  merchant_id: 1
+
+four:
+  id: 4
+  item_id: 3
+  buy_w: 2.0
+  sell_w: 1.0
+  merchant_id: 2
+  
+five:
+  id: 5
+  item_id: 7
+  buy_w: 2.0
+  sell_w: 1.0
+  merchant_id: 3
+  
+six:
+  id: 6
+  item_id: 8
+  buy_w: 2.0
+  sell_w: 1.0
+  merchant_id: 1
+  
+7:
+  id: 7
+  item_id: 9
+  buy_w: 2.0
+  sell_w: 1.5
+  merchant_id: 4
+8:
+  id: 8
+  item_id: 10
+  buy_w: 3.0
+  sell_w: 1.0
+  merchant_id: 5
+9:
+  id: 9
+  item_id: 11
+  buy_w: 2.5
+  sell_w: 1.0
+  merchant_id: 6
+10:
+  id: 10
+  item_id: 12
+  buy_w: 4.0
+  sell_w: 0.5
+  merchant_id: 7
+11:
+  id: 11
+  item_id: 13
+  buy_w: 3.0
+  sell_w: 2.0
+  merchant_id: 8
+12:
+  id: 12
+  item_id: 14
+  buy_w: 3.0
+  sell_w: 2.5
+  merchant_id: 9
+13:
+  id: 13
+  item_id: 15
+  buy_w: 1.5
+  sell_w: 1.0
+  merchant_id: 10
+14:
+  id: 14
+  item_id: 16
+  buy_w: 1.0
+  sell_w: 0.5
+  merchant_id: 11
+15:
+  id: 15
+  item_id: 17
+  buy_w: 1.0
+  sell_w: 0.5
+  merchant_id: 12
+16:
+  id: 16
+  item_id: 18
+  buy_w: 2.0
+  sell_w: 1.0
+  merchant_id: 13
+17:
+  id: 17
+  item_id: 19
+  buy_w: 2.5
+  sell_w: 1.5
+  merchant_id: 14
+18:
+  id: 18
+  item_id: 20
+  buy_w: 3.0
+  sell_w: 2.5
+  merchant_id: 15
+19:
+  id: 19
+  item_id: 21
+  buy_w: 6.0
+  sell_w: 1.0
+  merchant_id: 16
+20:
+  id: 20
+  item_id: 22
+  buy_w: 2.0
+  sell_w: 1.9
+  merchant_id: 17
+21:
+  id: 21
+  item_id: 23
+  buy_w: 2.0
+  sell_w: 1.0
+  merchant_id: 17
+22:
+  id: 22
+  item_id: 24
+  buy_w: 5.0
+  sell_w: 2.0
+  merchant_id: 17
+23:
+  id: 23
+  item_id: 25
+  buy_w: 4.0
+  sell_w: 2.5
+  merchant_id: 14
+24:
+  id: 24
+  item_id: 26
+  buy_w: 6.0
+  sell_w: 5.0
+  merchant_id: 6
+25:
+  id: 25
+  item_id: 27
+  buy_w: 2.0
+  sell_w: 1.5
+  merchant_id: 5
+26:
+  id: 26
+  item_id: 28
+  buy_w: 3.5
+  sell_w: 1.0
+  merchant_id: 7
+27:
+  id: 27
+  item_id: 29
+  buy_w: 2.0
+  sell_w: 1.5
+  merchant_id: 10
